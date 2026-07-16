@@ -38,7 +38,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     @Transactional
     public BookingResponseDto createBooking(BookingRequestDto request) {
-        // 1. Validate request and entities
+        // 1. Validate request and entity
         Train train = trainRepository.findById(request.getTrainId())
                 .orElseThrow(() -> new ResourceNotFoundException("Train not found with id: " + request.getTrainId()));
 
